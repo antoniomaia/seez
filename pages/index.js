@@ -1,8 +1,9 @@
 import Layout from '../components/layout';
+import SearchInput from '../components/search-input';
 
 const Index = () => (
   <Layout>
-    <h1>index</h1>
+    <SearchInput />
   </Layout>
 );
 
