@@ -21,6 +21,8 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-curly-brace-presence": "off",
-    "implicit-arrow-linebreak": 0
+    "implicit-arrow-linebreak": 0,
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-closing-tag-location": "off"
   }
 }

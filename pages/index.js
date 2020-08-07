@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import SearchInput from '../components/search-input';
 import SearchResult from '../components/search-result';
 import ErrorMessage from '../components/error-message';
+import Header from '../components/header';
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
@@ -22,12 +23,20 @@ const Index = () => {
 
   return (
     <Layout>
+      <Header />
       <SearchInput searchTerm={searchTerm} handleChange={handleChange} />
       {data && data.result && (
         <SearchResult result={data.result} total={data.total} />
       )}
-      {data && data.error && <ErrorMessage message={data.error} />}
-      {searchTerm && !data && <div>loading...</div>}
+      <section className={'container'}>
+        {data && data.error && <ErrorMessage message={data.error} />}
+        {searchTerm && !data && <div>Loading...</div>}
+      </section>
+      <style jsx>{`
+        .container {
+          margin: 0 20px;
+        }
+      `}</style>
     </Layout>
   );
 };
