@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { useTheme } from '../../pages/_app';
 import styles from './layout.module.css';
+import { LTR_THEME, RTL_THEME } from '../../constants/general';
 
 const Layout = ({ children }) => {
   const [theme] = useTheme();
@@ -15,7 +16,7 @@ const Layout = ({ children }) => {
       <main className={styles.container}>{children}</main>
       <style global jsx>{`
         body {
-          direction: ${theme === 'ltr' ? 'ltr' : 'rtl'};
+          direction: ${theme === LTR_THEME ? LTR_THEME : RTL_THEME};
         }
       `}</style>
     </>

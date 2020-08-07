@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 
 import '../styles/base.css';
+import { LTR_THEME } from '../constants/general';
 
 const Theme = createContext(undefined, undefined);
 
@@ -13,7 +14,7 @@ export function ThemeProvider({ theme, children }) {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider theme="ltr">
+    <ThemeProvider theme={LTR_THEME}>
       <Component {...pageProps} />
     </ThemeProvider>
   );

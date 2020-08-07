@@ -6,20 +6,28 @@ import SearchInput from '../components/search-input';
 import SearchResult from '../components/search-result';
 import ErrorMessage from '../components/error-message';
 import Header from '../components/header';
+import useDebounce from '../hooks/useDebounce';
+import { DEBOUNCE_TIME } from '../constants/general';
 
 const fetcher = url => fetch(url).then(r => r.json());
 
-const Index = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-
+const searchFacts = searchTerm => {
   const { data } = useSWR(
     searchTerm ? `/api/search?searchTerm=${searchTerm}` : null,
     fetcher,
   );
+  return data;
+};
+
+const Index = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchTerm = useDebounce(searchTerm, DEBOUNCE_TIME);
 
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
+
+  const data = searchFacts(debouncedSearchTerm);
 
   return (
     <Layout>
