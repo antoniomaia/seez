@@ -3,6 +3,8 @@ import useSWR from 'swr';
 
 import Layout from '../components/layout';
 import SearchInput from '../components/search-input';
+import SearchResult from '../components/search-result';
+import ErrorMessage from '../components/error-message';
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
@@ -18,12 +20,14 @@ const Index = () => {
     setSearchTerm(event.target.value);
   };
 
-  //if (error) return <div>failed to load</div>;
-  //if (!data) return <div>loading...</div>;
-
   return (
     <Layout>
       <SearchInput searchTerm={searchTerm} handleChange={handleChange} />
+      {data && data.result && (
+        <SearchResult result={data.result} total={data.total} />
+      )}
+      {data && data.error && <ErrorMessage message={data.error} />}
+      {searchTerm && !data && <div>loading...</div>}
     </Layout>
   );
 };

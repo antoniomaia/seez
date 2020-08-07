@@ -17,7 +17,7 @@ const handleGetSearch = async (res, searchTerm) => {
   if (hasErrors(data)) {
     return res.status(400).json({
       status: 400,
-      message: getErrorMessage(data.error),
+      error: getErrorMessage(data.violations),
     });
   }
 
