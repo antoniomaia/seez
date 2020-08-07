@@ -15,11 +15,7 @@ const SearchInput = ({ searchTerm, handleChange }) => {
             onChange={handleChange}
           />
         </label>
-        <img
-          src={'search.svg'}
-          alt={'magnifying glass'}
-          className={styles.icon}
-        />
+        <img src="search.svg" alt="magnifying glass" className={styles.icon} />
       </div>
     </div>
   );

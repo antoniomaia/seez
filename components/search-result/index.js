@@ -9,7 +9,7 @@ const SearchResult = ({ result, total }) => {
     <ul>
       {result.map(({ id, value, icon_url: iconUrl }) => (
         <li key={id}>
-          <img src={iconUrl} alt={'Chuck Norris Avatar'} />
+          <img src={iconUrl} alt="Chuck Norris Avatar" />
           <span>{value}</span>
         </li>
       ))}

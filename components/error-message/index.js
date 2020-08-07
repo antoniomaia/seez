@@ -3,7 +3,7 @@ import styles from './error.module.css';
 
 const ErrorMessage = ({ message }) => (
   <article className={styles.error}>
-    {message.map((error) => (
+    {message.map(error => (
       <h4 key={error}>{error}</h4>
     ))}
   </article>

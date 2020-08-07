@@ -7,7 +7,7 @@ import SearchResult from '../components/search-result';
 import ErrorMessage from '../components/error-message';
 import Header from '../components/header';
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
+const fetcher = url => fetch(url).then(r => r.json());
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,7 +17,7 @@ const Index = () => {
     fetcher,
   );
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     setSearchTerm(event.target.value);
   };
 
@@ -28,7 +28,7 @@ const Index = () => {
       {data && data.result && (
         <SearchResult result={data.result} total={data.total} />
       )}
-      <section className={'container'}>
+      <section className="container">
         {data && data.error && <ErrorMessage message={data.error} />}
         {searchTerm && !data && <div>Loading...</div>}
       </section>
