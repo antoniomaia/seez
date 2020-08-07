@@ -8,7 +8,7 @@ const SearchResult = ({ result, total }) => {
   const [theme] = useTheme();
 
   if (total === 0) {
-    return <h4>nothing to show</h4>;
+    return <h4 className={styles.empty}>nothing to show</h4>;
   }
 
   return (
