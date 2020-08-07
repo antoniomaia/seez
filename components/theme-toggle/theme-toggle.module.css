@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+}
+
+.button {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    color: #0093ff;
+    background-color: white;
+    border-radius: 25px;
+    padding: 8px 40px;
+    border: 2px solid #0d6bd9;
+    transition: all 0.25s ease;
+    font-weight: 700;
+}
+
+.button:focus {
+    outline:0;
+}
+
+.button:hover {
+    color: white;
+    background: linear-gradient(0deg, #5dbaff 0%, #0093ff 100%);
+}
