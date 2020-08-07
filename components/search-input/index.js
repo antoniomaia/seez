@@ -10,14 +10,14 @@ const SearchInput = ({ searchTerm, handleChange }) => {
 
   return (
     <div className={styles.container}>
-      <h1>Let's find Chuck Norris facts</h1>
-      <div
-        className={cx(
-          styles.searchBar,
-          isLtrTheme(theme) ? styles.searchBarLtr : styles.searchBarRtl,
-        )}
-      >
-        <label htmlFor="search-input">
+      <label htmlFor="search-input">
+        <h1>Let's find Chuck Norris facts</h1>
+        <div
+          className={cx(
+            styles.searchBar,
+            isLtrTheme(theme) ? styles.searchBarLtr : styles.searchBarRtl,
+          )}
+        >
           <input
             type="text"
             id="search-input"
@@ -25,9 +25,13 @@ const SearchInput = ({ searchTerm, handleChange }) => {
             value={searchTerm}
             onChange={handleChange}
           />
-        </label>
-        <img src="search.svg" alt="magnifying glass" className={styles.icon} />
-      </div>
+          <img
+            src="search.svg"
+            alt="magnifying glass"
+            className={styles.icon}
+          />
+        </div>
+      </label>
     </div>
   );
 };
