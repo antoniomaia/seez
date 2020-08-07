@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import PropTypes from 'prop-types';
 
 import { useTheme } from '../../pages/_app';
@@ -10,9 +9,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Head>
-        <title>Seez</title>
-      </Head>
       <main className={styles.container}>{children}</main>
       <style global jsx>{`
         body {
