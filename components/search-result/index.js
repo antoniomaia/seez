@@ -1,16 +1,28 @@
 import PropTypes from 'prop-types';
 
+import styles from './search-result.module.css';
+import { useTheme } from '../../pages/_app';
+import { isLtrTheme } from '../../utils/theme';
+
 const SearchResult = ({ result, total }) => {
+  const [theme] = useTheme();
+
   if (total === 0) {
     return <h4>nothing to show</h4>;
   }
 
   return (
-    <ul>
+    <ul className={styles.result}>
       {result.map(({ id, value, icon_url: iconUrl }) => (
         <li key={id}>
           <img src={iconUrl} alt="Chuck Norris Avatar" />
-          <span>{value}</span>
+          <span
+            className={
+              isLtrTheme(theme) ? styles.descriptionLtr : styles.descriptionRtl
+            }
+          >
+            {value}
+          </span>
         </li>
       ))}
     </ul>

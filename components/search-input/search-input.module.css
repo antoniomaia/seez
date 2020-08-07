@@ -23,15 +23,21 @@
 .icon {
     vertical-align: middle;
     height: 30px;
-    margin-left: 10px
 }
 
 .searchBar {
     display: flex;
     width: fit-content;
     align-items: center;
-    padding: 8px 10px 8px 20px;
     margin: 20px 0px;
     border-radius: 25px;
     border: 1px solid #606060;
+}
+
+.searchBarLtr {
+    padding: 8px 10px 8px 20px;
+}
+
+.searchBarRtl {
+    padding: 8px 20px 8px 10px;
 }

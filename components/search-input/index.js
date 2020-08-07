@@ -1,11 +1,22 @@
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+
 import styles from './search-input.module.css';
+import { useTheme } from '../../pages/_app';
+import { isLtrTheme } from '../../utils/theme';
 
 const SearchInput = ({ searchTerm, handleChange }) => {
+  const [theme] = useTheme();
+
   return (
     <div className={styles.container}>
       <h1>Let's find Chuck Norris facts</h1>
-      <div className={styles.searchBar}>
+      <div
+        className={cx(
+          styles.searchBar,
+          isLtrTheme(theme) ? styles.searchBarLtr : styles.searchBarRtl,
+        )}
+      >
         <label htmlFor="search-input">
           <input
             type="text"
