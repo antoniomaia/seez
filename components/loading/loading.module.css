@@ -1,3 +1,12 @@
 .loading {
     text-align: center;
+    margin-top: 80px;
+}
+
+.loading img {
+    height: 180px;
+}
+
+.flip {
+    transform: scaleX(-1);
 }
