@@ -8,6 +8,7 @@ import ErrorMessage from '../components/error-message';
 import Header from '../components/header';
 import useDebounce from '../hooks/useDebounce';
 import { DEBOUNCE_TIME } from '../constants/general';
+import Loading from '../components/loading';
 
 const fetcher = url => fetch(url).then(r => r.json());
 
@@ -32,17 +33,24 @@ const Index = () => {
   return (
     <Layout>
       <Header />
-      <SearchInput searchTerm={searchTerm} handleChange={handleChange} />
-      {data && data.result && (
-        <SearchResult result={data.result} total={data.total} />
-      )}
       <section className="container">
+        <SearchInput searchTerm={searchTerm} handleChange={handleChange} />
+        {data && data.result && (
+          <SearchResult result={data.result} total={data.total} />
+        )}
+      </section>
+      <section className="container feedback">
         {data && data.error && <ErrorMessage message={data.error} />}
-        {searchTerm && !data && <div>Loading...</div>}
+        {searchTerm && !data && <Loading />}
       </section>
       <style jsx>{`
         .container {
-          margin: 0 20px;
+          margin: 0 auto;
+          max-width: 970px;
+        }
+
+        .feedback {
+          padding: 0 20px;
         }
       `}</style>
     </Layout>
