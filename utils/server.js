@@ -1,6 +1,18 @@
+/**
+ * This method only checks for one error violation and
+ * further implementations should be done for other known errors.
+ * @param response
+ * @returns {true||false}
+ */
 export const hasErrors = response =>
   response.error && response.violations && response.violations['search.query'];
 
+/**
+ * Mapping known error codes to messages ready for users.
+ * Returning general error message by default.
+ * @param violations
+ * @returns {[]}
+ */
 export const getErrorMessage = violations => {
   const errorMessages = [];
 

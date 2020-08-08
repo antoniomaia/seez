@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 
-export default function useDebounce(value, delay) {
+/**
+ * This hook is designed to debounce any value update within our component's render function
+ * @param value
+ * @param delay
+ * @returns {debouncedValue}
+ */
+const useDebounce = (value, delay) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {
@@ -14,4 +20,6 @@ export default function useDebounce(value, delay) {
   }, [value]);
 
   return debouncedValue;
-}
+};
+
+export default useDebounce;
