@@ -1,3 +1,6 @@
 {
-  "extends": ["nextjs"]
+  "extends": [
+    "nextjs",
+    "plugin:cypress/recommended"
+  ]
 }

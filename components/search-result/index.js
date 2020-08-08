@@ -12,9 +12,9 @@ const SearchResult = ({ result, total }) => {
   }
 
   return (
-    <ul className={styles.result}>
+    <ul data-cy="facts-container" className={styles.result}>
       {result.map(({ id, value, icon_url: iconUrl }) => (
-        <li key={id}>
+        <li data-cy="facts-item" key={id}>
           <img src={iconUrl} alt="Chuck Norris Avatar" />
           <span
             className={

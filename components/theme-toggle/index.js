@@ -9,11 +9,16 @@ const ThemeToggle = () => {
   const handleToggle = () => setTheme(isLTR ? RTL_THEME : LTR_THEME);
 
   return (
-    <article className={styles.container}>
-      <button className={styles.button} type="button" onClick={handleToggle}>
+    <div className={styles.container}>
+      <button
+        data-cy="hero-cta"
+        className={styles.button}
+        type="button"
+        onClick={handleToggle}
+      >
         Switch to {isLTR ? 'RTL' : 'LTR'}
       </button>
-    </article>
+    </div>
   );
 };
 
