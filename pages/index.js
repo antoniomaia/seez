@@ -48,9 +48,9 @@ const Index = () => {
               <ErrorMessage message={data.error} />
             </section>
           )}
-          {searchTerm && !data && (
+          {!data && (
             <section className="feedback">
-              <Loading />
+              <Loading animate={searchTerm} />
             </section>
           )}
         </div>
@@ -63,7 +63,7 @@ const Index = () => {
         }
 
         .content {
-          min-height: 600px;
+          min-height: 450px;
         }
 
         .feedback {

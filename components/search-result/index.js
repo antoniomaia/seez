@@ -1,16 +1,8 @@
-import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './search-result.module.css';
 import { useTheme } from '../../pages/_app';
 import { isLtrTheme } from '../../utils/theme';
-
-const scrollToRef = ref => {
-  window.scrollTo({
-    top: ref.current.offsetTop - 150,
-    behavior: 'smooth',
-  });
-};
 
 const SearchResult = ({ result, total }) => {
   const [theme] = useTheme();
@@ -18,19 +10,14 @@ const SearchResult = ({ result, total }) => {
   if (total === 0) {
     return <h4 className={styles.empty}>Nothing to show</h4>;
   }
-  const listRef = useRef(null);
-
-  useEffect(() => {
-    scrollToRef(listRef);
-  }, []);
 
   return (
-    <ul data-cy="facts-container" className={styles.result} ref={listRef}>
+    <ul data-cy="facts-container" className={styles.result}>
       {result.map(({ id, value, icon_url: iconUrl }) => (
         <li data-cy="facts-item" key={id}>
           <article>
             <img src={iconUrl} alt="Chuck Norris Avatar" />
-            <span
+            <p
               className={
                 isLtrTheme(theme)
                   ? styles.descriptionLtr
@@ -38,7 +25,7 @@ const SearchResult = ({ result, total }) => {
               }
             >
               {value}
-            </span>
+            </p>
           </article>
         </li>
       ))}

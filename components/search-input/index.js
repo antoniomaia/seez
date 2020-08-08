@@ -5,12 +5,21 @@ import cx from 'classnames';
 import styles from './search-input.module.css';
 import { useTheme } from '../../pages/_app';
 import { isLtrTheme } from '../../utils/theme';
+import { scrollToRef } from '../../utils/scroll';
 
 const SearchInput = ({ searchTerm, handleChange, invalid }) => {
   const [theme] = useTheme();
 
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (searchTerm) {
+      scrollToRef(containerRef);
+    }
+  }, [searchTerm]);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={containerRef}>
       <label htmlFor="search-input">
         <h2>Let's find Chuck Norris facts</h2>
         <div

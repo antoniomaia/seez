@@ -11,6 +11,7 @@
     border-radius: 8px;
     padding: 10px;
     color: #000000;
+    word-break: break-word;
 }
 
 .descriptionLtr {
