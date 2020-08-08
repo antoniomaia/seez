@@ -3,7 +3,7 @@
     list-style: none;
 }
 
-.result li {
+.result li article {
     display: flex;
     align-items: center;
     margin: 20px 0;

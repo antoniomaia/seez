@@ -11,6 +11,7 @@ const ThemeToggle = () => {
   return (
     <div className={styles.container}>
       <button
+        aria-describedby="descriptionSwitch"
         data-cy="hero-cta"
         className={styles.button}
         type="button"

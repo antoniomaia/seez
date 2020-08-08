@@ -34,23 +34,41 @@ const Index = () => {
     <Layout>
       <Header />
       <section className="container">
-        <SearchInput searchTerm={searchTerm} handleChange={handleChange} />
-        {data && data.result && (
-          <SearchResult result={data.result} total={data.total} />
-        )}
+        <div className="content">
+          <SearchInput
+            searchTerm={searchTerm}
+            handleChange={handleChange}
+            invalid={Boolean(data && data.error)}
+          />
+          {data && data.result && (
+            <SearchResult result={data.result} total={data.total} />
+          )}
+          {data && data.error && (
+            <section className="feedback">
+              <ErrorMessage message={data.error} />
+            </section>
+          )}
+          {searchTerm && !data && (
+            <section className="feedback">
+              <Loading />
+            </section>
+          )}
+        </div>
       </section>
-      <section className="container feedback">
-        {data && data.error && <ErrorMessage message={data.error} />}
-        {searchTerm && !data && <Loading />}
-      </section>
+
       <style jsx>{`
         .container {
-          margin: 0 auto;
+          margin: 0 auto 20px auto;
           max-width: 970px;
         }
 
+        .content {
+          min-height: 600px;
+        }
+
         .feedback {
-          padding: 0 20px;
+          padding: 0 20px 50px 20px;
+          max-width: 970px;
         }
       `}</style>
     </Layout>

@@ -20,10 +20,12 @@
 }
 
 .button:focus {
-    outline:0;
+    outline: none;
 }
 
-.button:hover {
-    color: white;
-    background: linear-gradient(0deg, #5dbaff 0%, #0093ff 100%);
+@media (hover:hover) {
+    .button:hover {
+        color: white;
+        background: linear-gradient(0deg, #5dbaff 0%, #0093ff 100%);
+    }
 }
