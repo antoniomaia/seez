@@ -18,7 +18,7 @@ const Loading = ({ animate }) => {
 };
 
 Loading.propTypes = {
-  animate: PropTypes.bool.isRequired,
+  animate: PropTypes.string.isRequired,
 };
 
 export default Loading;
