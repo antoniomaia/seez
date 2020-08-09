@@ -2,16 +2,16 @@
   
 [seez.vercel.app](http://seez.vercel.app)
 
-## Instructions
+## Getting Started
 
 1. Navigate to [repo](https://github.com/antoniomaia/seez)
 2. Clone locally using
-   `git clone git@github.com:antoniomaia/seez.git`
-3. Install dependencies using `npm install`
-4. Start your server using `npm run dev`
+   `git clone https://github.com/antoniomaia/seez.git`
+3. Go to its root directory and run `npm install` to install its dependencies
+4. Start the application using `npm run dev`
 5. Run tests using `npm run cy:run`, alternatively you can open Cypress using `npm run cy:open`
 6. Navigate to app in [browser](http://localhost:3000)
-7. Enjoy!
+7. Have fun!
 
 ## Discussion
 
@@ -44,16 +44,14 @@ some examples are the current UI theme or the UI language.
 In the `Layout` component we set the `direction` CSS property with `'ltr' | 'rtl'`. Throughout the code we make use of `useTheme` to access the current theme and style 
 appropriately. The concept of a theme was implemented because there are other customizations to be made, specially in terms of typography and spacing between the two use cases.
 
-<br />
+#### Notes
+
+Audited the web application with [Lighthouse](https://developers.google.com/web/tools/lighthouse) to identify and fix common problems that affect performance, accessibility, and user experience.
 
 To enhance the user experience when the user starts searching for a Chuck Norris fact, the `scrollToRef()` method scrolls to the container 
 so that the `results | loading | error` are visible to the user.
 
-Audited the web application with [Lighthouse](https://developers.google.com/web/tools/lighthouse) to identify and fix common problems that affect performance, accessibility, and user experience.
-
-#### Notes
-
-In order to optimize even further our web application a few features come to mind.
+In order to optimize even further our web application a few features come to mind:
 
 - Dynamically import the React Components used to display our list of facts.
 - Implement list virtualization, or "windowing", to only render what is visible to the user. This improves both the rendering and scrolling performance of the list.
