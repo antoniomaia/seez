@@ -3,41 +3,66 @@
     color: #303030;
 }
 
-.container h1{
+.container h1 {
     text-transform: uppercase;
 }
 
-.container input{
-    width: 100%;
-    min-width: 100px;
-    max-width: 300px;
+.container input {
+    width: 120px;
     border: none;
     text-decoration: none;
     color: #303030;
     cursor: pointer;
     outline: none;
-    font-size: 20px;
+    font-size: 16px;
     caret-color: #0d6bd9;
 }
 
 .icon {
     vertical-align: middle;
-    height: 30px;
+    height: 26px;
 }
 
 .searchBar {
     display: flex;
     width: fit-content;
     align-items: center;
-    margin: 20px 0px;
+    margin: 14px 0px 20px 0;
     border-radius: 25px;
     border: 1px solid #606060;
 }
 
 .searchBarLtr {
-    padding: 8px 10px 8px 20px;
+    padding: 4px 10px 4px 20px;
 }
 
 .searchBarRtl {
-    padding: 8px 20px 8px 10px;
+    padding: 4px 20px 4px 8px;
+}
+
+@media (min-width: 768px) {
+    .container h2 {
+        font-size: 38px;
+    }
+
+    .container input {
+        width: 260px;
+        font-size: 20px;
+    }
+
+    .searchBar {
+        margin: 20px 0px;
+    }
+
+    .searchBarLtr {
+        padding: 8px 10px 8px 20px;
+    }
+
+    .searchBarRtl {
+        padding: 8px 20px 8px 10px;
+    }
+
+    .icon {
+        height: 30px;
+    }
 }
